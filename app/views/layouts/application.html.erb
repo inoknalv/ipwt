@@ -12,9 +12,12 @@
   <body>
     <header>
       <%= link_to "Add a story", new_post_path %>
+      <% if user_signed_in? %>
+        <%= current_user.email %> 
+      <% end %>
     </header>
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
